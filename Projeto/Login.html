@@ -98,21 +98,19 @@
     </div>
 </body>
 
-<div id="botoes" class="col-md-12" hidden>
-    <div class="row justify-content-end">
-    <a href="javascript:;" onclick="removerLocal(this.closest('tr'))" id="remove" style="text-decoration: none;" class="col-md-7">
+<div id="botoes" hidden>
+    <a href="javascript:;" onclick="removerLocal(this.closest('tr'))" id="remove" style="text-decoration: none;">
         <span class="fa-stack">
             <i class="fa-solid fa-circle fa-stack-2x" style="color: tomato;"></i>
             <i class="fa fa-trash fa-stack-1x fa-inverse"></i>
         </span>
     </a>
-    </div>
 </div>
 
 <script>
     function adicionarEstabelecimento() {
         var inputs = document.querySelectorAll(".required");
-        var nome, endereco, sobre, telefone, wpp, tabela, botoes, thBotoes;
+        var nome, endereco, sobre, telefone, wpp, tabela, botoes;
         var vazio = false;
 
         inputs.forEach(element => {
@@ -140,8 +138,7 @@
 
         const localTr = document.createElement("tr");
         const trLista = document.getElementById("trLista");
-
-        thBotoes = document.createElement("th");
+        
         nome = document.createElement("td");
         endereco = document.createElement("td");
         sobre = document.createElement("td");
@@ -170,8 +167,7 @@
         localTr.appendChild(telefone);
         localTr.appendChild(wpp);
         localTr.appendChild(botoes);
-
-        trLista.appendChild(thBotoes);
+        localTr.appendChild(botoes);
 
         tabela.appendChild(localTr);
     }
